@@ -1,0 +1,27 @@
+{% extends "sales/base.html" %}
+{% spaceless %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+{% block title %}{% trans "sales.top_products_report" %}{% endblock title %}
+
+{% block content %}
+<main>
+  <div class="container">
+    <div class="row pt-3 pb-3">
+      <div class="col-md-12 d-sm-flex text-center justify-content-center">
+        <h1 class="h2">{% trans "sales.top_products_report" %}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md">
+
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% endspaceless %}

@@ -1,0 +1,87 @@
+{% extends "sales/base.html" %}
+{% spaceless %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+{% block title %}{% trans "sales.orders_report" %}{% endblock title %}
+
+{% block content %}
+<main>
+  <div class="container">
+    <div class="row pt-3 pb-3">
+      <div class="col-md-12 d-sm-flex text-center justify-content-center">
+        <h1 class="h2">{% trans "sales.orders_report" %}</h1>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md">
+        <form method="GET" novalidate id="create-request-form">
+          {# {% csrf_token %} #}
+          {{ time_interval_form.non_field_errors }}
+
+          <div class="form-group">
+            <label for="{{ time_interval_form.start_date.id_for_label }}">{{ time_interval_form.start_date.label }}</label>
+            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+              {{ time_interval_form.start_date }}
+              <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+            {{ time_interval_form.start_date.errors }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ time_interval_form.end_date.id_for_label }}">{{ time_interval_form.end_date.label }}</label>
+            <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+              {{ time_interval_form.end_date }}
+              <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+            {{ time_interval_form.end_date.errors }}
+          </div>
+
+          <button type="submit" class="btn btn-dark mt-3" id="send-button">{% trans "confirm" %}</button>
+        </form>
+      </div>
+    </div>
+    {% if not time_interval_form.errors %}
+    <div class="row">
+      <div class="col-md">
+        <div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">{% trans "sales.order.created_date" %}</th>
+                <th scope="col">{% trans "sales.order.number" %}</th>
+                <th scope="col">{% trans "sales.order.total" %}</th>
+                <th scope="col">{% trans "sales.order.order_items" %}</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+              <tr>
+                <th scope="row">{{ order.created_date }}</th>
+                <td>{{ order.number }}</td>
+                <td>{{ order.order_price }}</td>
+                <td>
+                {% for order_item in order.order_items %}
+                  {{ order_item }}<br />
+                {% endfor %}
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</main>
+<script type="text/javascript">
+  jQuery('#datetimepicker').datetimepicker();
+</script>
+{% endblock %}
+{% endspaceless %}

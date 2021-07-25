@@ -1,0 +1,28 @@
+{% spaceless %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% load static %}
+<header class="page-header sticky-top">
+  <nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark" role="navigation">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'main_page' %}">{% trans "sales" %}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{% url 'sales:orders_report' %}">{% trans "sales.orders_report" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{% url 'sales:top_products_report' %}">{% trans "sales.top_products_report" %}</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0">
+      </div>
+    </div>
+  </nav>
+</header>
+{% endspaceless %}
