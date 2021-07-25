@@ -23,7 +23,7 @@ class Command(BaseCommand):
                 order = self._generate_order(num_order, start_date)
                 order.save()
 
-                for num_order_item in range(1, random.randint(1, 5)):
+                for num_order_item in range(1, random.randint(2, 6)):
                     order_items.append(self._generate_order_item(order))
 
             OrderItem.objects.bulk_create(order_items)
