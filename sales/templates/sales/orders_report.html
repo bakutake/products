@@ -17,7 +17,6 @@
     <div class="row mb-5">
       <div class="col-md">
         <form method="GET" novalidate id="create-request-form">
-          {# {% csrf_token %} #}
           {{ time_interval_form.non_field_errors }}
 
           <div class="form-group">
@@ -80,8 +79,5 @@
     {% endif %}
   </div>
 </main>
-<script type="text/javascript">
-  jQuery('#datetimepicker').datetimepicker();
-</script>
 {% endblock %}
 {% endspaceless %}

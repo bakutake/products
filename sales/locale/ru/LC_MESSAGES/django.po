@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-23 09:18+0300\n"
+"POT-Creation-Date: 2021-07-26 04:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,42 +20,89 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: models.py:6
+#: sales/forms.py:8
+msgid "sales.time_interval_form.start_date"
+msgstr "Стартовая дата"
+
+#: sales/forms.py:16
+msgid "sales.time_interval_form.end_date"
+msgstr "Конечная дата"
+
+#: sales/models.py:6 sales/templates/sales/orders_report.html:56
+#: sales/templates/sales/top_products_report.html:56
 msgid "sales.order.number"
-msgstr "Номер"
+msgstr "Номер заказа"
 
-#: models.py:7
+#: sales/models.py:7 sales/templates/sales/orders_report.html:55
+#: sales/templates/sales/top_products_report.html:58
 msgid "sales.order.created_date"
-msgstr "Дата"
+msgstr "Дата заказа"
 
-#: models.py:13
+#: sales/models.py:13
 msgid "sales.order"
 msgstr "Заказ"
 
-#: models.py:14
+#: sales/models.py:14
 msgid "sales.orders"
 msgstr "Заказы"
 
-#: models.py:19
+#: sales/models.py:19
 msgid "sales.order_item.order"
 msgstr "Заказ"
 
-#: models.py:20
+#: sales/models.py:20
 msgid "sales.order_item.created_date"
-msgstr "Дата"
+msgstr "Дата заказа"
 
-#: models.py:22
+#: sales/models.py:22
 msgid "sales.order_item.product_price"
 msgstr "Цена"
 
-#: models.py:24
+#: sales/models.py:24
 msgid "sales.order_item.amount"
-msgstr "Колличество"
+msgstr "Количество"
 
-#: models.py:30
+#: sales/models.py:30
 msgid "sales.order_item"
 msgstr "Элемент заказа"
 
-#: models.py:31
+#: sales/models.py:31
 msgid "sales.order_items"
 msgstr "Элементы заказа"
+
+#: sales/templates/sales/base.html:15 sales/templates/sales/header.html:9
+msgid "sales"
+msgstr "Продажи"
+
+#: sales/templates/sales/header.html:17
+#: sales/templates/sales/orders_report.html:7
+#: sales/templates/sales/orders_report.html:14
+msgid "sales.orders_report"
+msgstr "Отчет по заказам"
+
+#: sales/templates/sales/header.html:20
+#: sales/templates/sales/top_products_report.html:7
+#: sales/templates/sales/top_products_report.html:14
+msgid "sales.top_products_report"
+msgstr "Отчет по самым покупаемым товарам (Топ 20)"
+
+#: sales/templates/sales/orders_report.html:44
+#: sales/templates/sales/top_products_report.html:44
+msgid "confirm"
+msgstr "Подтвердить"
+
+#: sales/templates/sales/orders_report.html:57
+msgid "sales.order.total"
+msgstr "Количество"
+
+#: sales/templates/sales/orders_report.html:58
+msgid "sales.order.order_items"
+msgstr "Элементы заказа"
+
+#: sales/templates/sales/top_products_report.html:55
+msgid "sales.order_item.product_name"
+msgstr "Наименование товара"
+
+#: sales/templates/sales/top_products_report.html:57
+msgid "sales.order_item.price"
+msgstr "Цена"
