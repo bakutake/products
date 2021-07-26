@@ -93,7 +93,7 @@ msgstr "Подтвердить"
 
 #: sales/templates/sales/orders_report.html:57
 msgid "sales.order.total"
-msgstr "Количество"
+msgstr "Сумма"
 
 #: sales/templates/sales/orders_report.html:58
 msgid "sales.order.order_items"

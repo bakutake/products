@@ -35,10 +35,14 @@ python manage.py generate_orders <total> # Сгенерирует <total> чис
 
 ### Отчет по заказам за выбранный период времени
 
+![alt text](https://github.com/bakutake/products/blob/master/screens/orders_report.png)
+
 Отчет доступен будет по адресу /sales/ordersreport/
 Примечание: datetimepicker не работает, и дату нужно будет ввести вручную (в формате "07/07/2021 17:07")
 
 ### Отчет по самым покупаемым товарам (Топ 20)
+
+![alt text](https://github.com/bakutake/products/blob/master/screens/top20_products_report.png)
 
 Отчет доступен будет по адресу /sales/topproductsreport/
 Примечание: datetimepicker не работает, и дату нужно будет ввести вручную (в формате "07/07/2021 17:07")
